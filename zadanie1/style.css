@@ -15,12 +15,8 @@ Więcej na ten temat: https://cssreset.com/what-is-a-css-reset/
 body {
     margin: 0;
     padding: 0;
-    background-color: #25072E;
 }
 
-.content-section {
-    background-color: #25072E;
-}
 
 h1, h2, h3 {
     margin: 0;
@@ -30,7 +26,7 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    background-color: #25072E
+
 }
 
 .page-navigation__item {
@@ -39,7 +35,7 @@ ul {
     font-weight: bold;
     font-size: 13px;
     letter-spacing: 6.7px;
-    color:#EC008C;
+
 }
 
 /*
@@ -62,29 +58,31 @@ Więcej na ten temat: https://webaim.org/techniques/css/invisiblecontent/
 /*
 Sekcja pomocnicza, aby zwizualizować pozycje głównych bloków strony. Będzie usunięta w następnych krokach.
 */
+
 .page-header {
-    background-color: #25072E;
+
 }
 
 .page-content {
-    background-color: rgb(56, 18, 68);
     display: grid;
 }
 
 .page-footer {
-    background-color: #7ba3ff;
+
 }
 
 .content-section {
-    background-color: #ca9aca;
-}
-.content-section:nth-child(odd) {
-    background-color: #e69fe6;
+
 }
 
-.about-section__desc {
-    color:#EC008C;
+.content-section:nth-child(odd) {
+    background-color: rgb(40, 16, 49);
 }
+
+.content-section:nth-child(even) {
+    background-color: rgb(24, 4, 33);
+}
+
 /*
 Koniec sekcji pomocniczej
 */
@@ -122,6 +120,38 @@ Właściwość "text-align: right" przykleja zawartość do prawej strony
     margin-left: 220px;
     padding: 0 10%;
     text-align: right;
+    display: grid;
+    grid-template-rows: repeat(6, 100vh);
+}
+
+.content-section:nth-child(1) {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.content-section:nth-child(2) {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.content-section:nth-child(3) {
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.content-section:nth-child(4) {
+    grid-row-start: 4;
+    grid-row-end: 5;
+}
+
+.content-section:nth-child(5) {
+    grid-row-start: 5;
+    grid-row-end: 6;
+}
+
+.content-section:nth-child(6) {
+    grid-row-start: 6;
+    grid-row-end: 7;
 }
 
 /*
@@ -133,3 +163,8 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
 .content-section {
     min-height: 100vh;
 }
+
+.band-members__item {
+    display: inline-block;
+}
+
