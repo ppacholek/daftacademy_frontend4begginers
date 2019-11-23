@@ -15,6 +15,11 @@ Więcej na ten temat: https://cssreset.com/what-is-a-css-reset/
 body {
     margin: 0;
     padding: 0;
+    background-color: #25072E;
+}
+
+.content-section {
+    background-color: #25072E;
 }
 
 h1, h2, h3 {
@@ -25,6 +30,16 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
+    background-color: #25072E
+}
+
+.page-navigation__item {
+    font-family: Helvetica;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 6.7px;
+    color:#EC008C;
 }
 
 /*
@@ -48,11 +63,12 @@ Więcej na ten temat: https://webaim.org/techniques/css/invisiblecontent/
 Sekcja pomocnicza, aby zwizualizować pozycje głównych bloków strony. Będzie usunięta w następnych krokach.
 */
 .page-header {
-    background-color: #ffb1b1;
+    background-color: #25072E;
 }
 
 .page-content {
-    background-color: #b0ffb0;
+    background-color: rgb(56, 18, 68);
+    display: grid;
 }
 
 .page-footer {
@@ -64,6 +80,10 @@ Sekcja pomocnicza, aby zwizualizować pozycje głównych bloków strony. Będzie
 }
 .content-section:nth-child(odd) {
     background-color: #e69fe6;
+}
+
+.about-section__desc {
+    color:#EC008C;
 }
 /*
 Koniec sekcji pomocniczej
