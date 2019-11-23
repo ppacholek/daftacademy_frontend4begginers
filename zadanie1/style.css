@@ -124,6 +124,7 @@ Właściwość "text-align: right" przykleja zawartość do prawej strony
     padding-right: 10%;
     padding-top: 0;
     padding-bottom: 0;
+    overflow: hidden;
 }
 
 .content-section:nth-child(1) {
@@ -170,3 +171,22 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     display: inline-block;
 }
 
+.about-section__desc {
+    background-color: pink;
+    position: relative;
+    top: 170px;
+    left: 1px;
+    width: 350px;
+}
+
+.about-section__desc-details {
+    color: white;
+}
+
+.about-section img {
+    height: 50vh;
+}
+
+.about-section__desc-header {
+    text-transform: uppercase;
+}
