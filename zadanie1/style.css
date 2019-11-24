@@ -29,6 +29,8 @@ ul {
     text-decoration: none;
 }
 
+/* MENU */
+
 .page-navigation__item {
     font-family: Helvetica;
     text-transform: uppercase;
@@ -41,8 +43,12 @@ ul {
 
 a:link {
     text-decoration: none;
-    color: rgb(215, 1, 130);
+    color: rgb(236, 0, 140, 0.8);
   }
+
+a:hover {
+    color: rgb(236, 0, 140);
+}
 
 /*
 ZAGADNIENIE PONADPROGRAMOWE
@@ -71,10 +77,6 @@ Sekcja pomocnicza, aby zwizualizować pozycje głównych bloków strony. Będzie
 
 .page-footer {
      
-}
-
-.content-section {
-
 }
 
 .content-section:nth-child(odd) {
@@ -118,6 +120,9 @@ skrótem od padding-top: 0, padding-bottom: 0, padding-left: 10%, padding-right:
 Właściwość "text-align: right" przykleja zawartość do prawej strony
 (oddziałuje na elementy, które są elementami inline'owymi, np. tekst, znaczniki <a>, <span> czy elementy z nadanym stylem "display: inline-block").
 */
+
+
+
 .page-content {
     /* margin-left: 220px; */
     text-align: right;
@@ -173,42 +178,202 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     min-height: 100vh;
 }
 
+/* SEKCJA 1 - CZŁONKOWIE ZESPOŁU */
+
+.band-members {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
 .band-members__item {
-    display: inline-block;
-    margin-top: 300px;
-    margin-bottom: 300px;
     font-family: Helvetica;
-    letter-spacing: 6.7px;
+    letter-spacing: 5px;
     text-align: left;
-    
+    margin: 10px; 
 }
 
 .band-members__name {
     color: #ccc8ff;
     text-transform: uppercase;
     font-weight: bold;
+    font-size: 15px;
 }
 
 .band-members__desc {
     color: rgb(204, 200, 255, 0.5);
+    font-size: 13px;
 }
+
+.content-section__header {
+    text-transform: uppercase;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 4.5px;
+    color: #ef008e;
+    font-family: OpenSans;
+    padding-top: 100px;
+    padding-bottom: 50px;
+}
+
+/* DRUGA SEKCJA - ABOUT */
 
 .about-section__desc {
-    background-color: pink;
+    font-weight: 300;
+    background-color: #25072e;
     position: relative;
-    top: 170px;
-    left: 1px;
-    width: 350px;
-}
-
-.about-section__desc-details {
-    color: white;
-}
-
-.about-section img {
-    height: 50vh;
+    top: -250px;
+    left: 210px;
+    width: 400px;
+    height: 400px;
 }
 
 .about-section__desc-header {
+    color: #ccc8ff;
     text-transform: uppercase;
+    font-size: 15px;
+    font-family: OpenSans;
+    font-weight: bold;
+    letter-spacing: 3.8px;
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 20px;
+}
+
+.about-section__desc-details {
+    color: rgb(204, 200, 255, 0.8);
+    font-size: 13px;
+    font-family: OpenSans;
+    text-align: left;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+
+.about-section img {
+    height: 60vh;
+    border-top: 3px solid #ef008e;
+}
+
+/* TRZECIA SEKCJA - CONCERTS */
+
+.concerts {
+    text-align: right;
+    display: grid;
+    grid-template-rows: repeat(2, 20vh);
+    grid-template-columns: repeat(2, 20vh);
+    grid-column-gap: 350px;
+    grid-row-gap: 250px;
+    margin-right: 50px;
+}
+
+.concerts img {
+    height: 300px;
+    border-bottom: 3px solid #ef008e;
+}   
+    
+.concerts__date {
+    color: #ccc8ff;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 3.8px;
+    text-align: left;
+    font-family: OpenSans;
+ }
+
+.concerts__location {
+    color: rgb(204, 200, 255, 0.8);
+    font-size: 13px;
+    letter-spacing: 3.5px;
+    font-family: OpenSans;
+    text-align: left;
+ }
+
+.concerts button {
+    background-color: rgb(204, 200, 255, 0.1);
+    color: rgb(204, 200, 255, 0.8);
+    border: none;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    font-size: 12px;
+    font-weight: semibold;
+    border-radius: 3px;
+ }
+
+.concerts button:hover {
+    background-color:rgb(204, 200, 255, 0.5); 
+    color: rgb(204, 200, 255, 1.0);
+}
+
+/* CZWARTA SEKCJA - TELEDYSK */
+
+.content-section__header video {
+    border-top: 3px solid #ef008e;
+ }
+
+/* PIĄTA SEKCJA - GALERIA */
+
+.gallery {
+    display: grid;
+    grid-template-rows: repeat(3, 40px, 40px);
+    grid-template-columns: repeat(3, 20vh);
+}
+
+.gallery ,
+.gallery__image {
+    border-top: 3px solid #ef008e;
+}
+
+/* SZÓSTA SEKCJA - KONTAKT */
+
+address {
+    color: rgb(204, 200, 255, 0.8);
+    font-size: 13px;
+    font-family: OpenSans;
+    font-style: normal;
+}
+
+.form__field {
+    color: rgb(204, 200, 255, 0.8);
+    font-size: 13px;
+    font-family: OpenSans;
+    font-style: normal;
+    margin: 50px;
+}
+
+.form__input {
+    background-color: rgb(204, 200, 255, 0.1);
+    border: none;
+    border-radius: 3px;
+}
+
+.form__field button {
+    background-color: rgb(204, 200, 255, 0.1);
+    color: rgb(204, 200, 255, 0.8);
+    border: none;
+    text-transform: uppercase;
+    padding-top: 7px;
+    padding-right: 13px;
+    padding-bottom: 7px;
+    padding-left: 13px;
+    font-size: 12px;
+    font-weight: semibold;
+    border-radius: 3px;
+}
+
+.form__field button:hover {
+    background-color:rgb(204, 200, 255, 0.5); 
+    color: rgb(204, 200, 255, 1.0);
 }
