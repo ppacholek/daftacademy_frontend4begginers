@@ -7,7 +7,7 @@ aby były one jednolite niezalenie od przeglądarki.
 
 Więcej na ten temat: https://cssreset.com/what-is-a-css-reset/
 */
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 * {
     box-sizing: border-box;
 }
@@ -15,6 +15,11 @@ Więcej na ten temat: https://cssreset.com/what-is-a-css-reset/
 body {
     margin: 0;
     padding: 0;
+    /* background-color: rgb(40, 16, 49); */
+    background-image: url('images/background.svg');
+    background-size: 120vw;
+    background-attachment: fixed;
+    background-position: -50px -100px;
 }
 
 
@@ -70,22 +75,6 @@ Więcej na ten temat: https://webaim.org/techniques/css/invisiblecontent/
 /*
 Sekcja pomocnicza, aby zwizualizować pozycje głównych bloków strony. Będzie usunięta w następnych krokach.
 */
-
-.page-header {
-
-}
-
-.page-footer {
-     
-}
-
-.content-section:nth-child(odd) {
-    background-color: rgb(40, 16, 49);
-}
-
-.content-section:nth-child(even) {
-    background-color: rgb(24, 4, 33);
-}
 
 /*
 Koniec sekcji pomocniczej
@@ -191,7 +180,23 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: center;   
+}
+
+.band-members__image {
+    opacity: 0.5;
+}
+
+.band-members__image:hover {
+    opacity: 1;
+}
+
+.band-members__image ~ p {
+    visibility: hidden;
+}
+
+.band-members__image:hover ~ p {
+    visibility: initial;
 }
 
 .band-members__item {
@@ -219,7 +224,7 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     font-weight: bold;
     letter-spacing: 4.5px;
     color: #ef008e;
-    font-family: OpenSans;
+    font-family: "Open Sans";
     padding-top: 100px;
     padding-bottom: 50px;
 }
@@ -229,18 +234,21 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
 .about-section__desc {
     font-weight: 300;
     background-color: #25072e;
+    float: right;
     position: relative;
-    top: -250px;
-    left: 210px;
-    width: 400px;
-    height: 400px;
+    margin-left: 1000000px;
+    right: calc(75vh - 85px);
+    bottom: calc(50vh - 215px);
+    width: 350px;
+    height: 350px;
+    border-bottom: 3px solid #ef008e;
 }
 
 .about-section__desc-header {
     color: #ccc8ff;
     text-transform: uppercase;
     font-size: 15px;
-    font-family: OpenSans;
+    font-family: "Open Sans";
     font-weight: bold;
     letter-spacing: 3.8px;
     text-align: left;
@@ -251,7 +259,7 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
 .about-section__desc-details {
     color: rgb(204, 200, 255, 0.8);
     font-size: 13px;
-    font-family: OpenSans;
+    font-family: "Open Sans";
     text-align: left;
     padding-top: 20px;
     padding-right: 20px;
@@ -260,24 +268,28 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
 }
 
 .about-section img {
-    height: 60vh;
+    height: 50vh;
     border-top: 3px solid #ef008e;
 }
 
 /* TRZECIA SEKCJA - CONCERTS */
 
 .concerts {
-    text-align: right;
-    display: grid;
-    grid-template-rows: repeat(2, 20vh);
-    grid-template-columns: repeat(2, 20vh);
-    grid-column-gap: 350px;
-    grid-row-gap: 250px;
-    margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vh;
+    height: 70vh;
+    float: right;
+    justify-content: space-between;
+}
+
+.concerts__item {
+    width: 40%;
+    flex: 0 0 47%;
 }
 
 .concerts img {
-    height: 300px;
+    width: 100%;
     border-bottom: 3px solid #ef008e;
 }   
     
@@ -287,14 +299,14 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     font-weight: bold;
     letter-spacing: 3.8px;
     text-align: left;
-    font-family: OpenSans;
+    font-family: "Open Sans";
  }
 
 .concerts__location {
     color: rgb(204, 200, 255, 0.8);
     font-size: 13px;
     letter-spacing: 3.5px;
-    font-family: OpenSans;
+    font-family: "Open Sans";
     text-align: left;
  }
 
@@ -310,6 +322,9 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     font-size: 12px;
     font-weight: semibold;
     border-radius: 3px;
+    position: relative;
+    top: -61px;
+    left: 0px;
  }
 
 .concerts button:hover {
@@ -319,44 +334,85 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
 
 /* CZWARTA SEKCJA - TELEDYSK */
 
-.content-section__header video {
+#video iframe {
     border-top: 3px solid #ef008e;
+    width: 92vh;
+    height: 65vh;
  }
 
 /* PIĄTA SEKCJA - GALERIA */
 
 .gallery {
-    display: grid;
-    grid-template-rows: repeat(3, 40px, 40px);
-    grid-template-columns: repeat(3, 20vh);
+    display: flex;
+    flex-wrap: wrap;
+    width: 100vh;
+    height: 70vh;
+    float: right;
+    justify-content: space-between;
 }
 
-.gallery ,
-.gallery__image {
+.gallery__item {
+    width: 30%;
+    height: 30%;
+    flex: 0 0 30%;
+}
+
+.gallery__item img {
+    height: 104%;
     border-top: 3px solid #ef008e;
 }
 
 /* SZÓSTA SEKCJA - KONTAKT */
 
+#contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 500px;
+}
+
+#contact .content-section__header {
+    width: 100%;
+}
+
+#contact .gallery__image {
+
+}
+
 address {
     color: rgb(204, 200, 255, 0.8);
     font-size: 13px;
-    font-family: OpenSans;
+    font-family: "Open Sans";
     font-style: normal;
+    padding-left: 60px;
+    text-align: left;
+}
+
+.form {
+    width: 100%;
 }
 
 .form__field {
     color: rgb(204, 200, 255, 0.8);
     font-size: 13px;
-    font-family: OpenSans;
+    font-family: "Open Sans";
     font-style: normal;
-    margin: 50px;
+    margin-top: 40px;
+    text-align: left;
+}
+
+.form__label {
+    display: block;
+    padding: 3px;
 }
 
 .form__input {
     background-color: rgb(204, 200, 255, 0.1);
     border: none;
     border-radius: 3px;
+    height: 25px;
+    width: 200px;
 }
 
 .form__field button {
