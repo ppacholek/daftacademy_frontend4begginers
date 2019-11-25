@@ -43,17 +43,29 @@ ul {
     font-size: 13px;
     letter-spacing: 6.7px;
     padding: 7px;
-    
 }
 
-a:link {
+.page-navigation__item a {
     text-decoration: none;
-    color: rgb(236, 0, 140, 0.8);
+    color: rgba(236, 0, 140, 0.8);
   }
 
-a:hover {
-    color: rgb(236, 0, 140);
+.page-navigation__item a:hover {
+    color: rgba(236, 0, 140, 1);
 }
+
+.page-navigation__item a:focus {
+    color: rgba(236, 0, 140);
+}
+
+.page-navigation__item a:active {
+    color: rgba(236, 0, 140, 0.2);
+} 
+
+.page-navigation__item a:disabled {
+    color: rgba(236, 0, 140, 0.4);
+}
+
 
 /*
 ZAGADNIENIE PONADPROGRAMOWE
@@ -72,20 +84,6 @@ Więcej na ten temat: https://webaim.org/techniques/css/invisiblecontent/
     overflow: hidden;
 }
 
-/*
-Sekcja pomocnicza, aby zwizualizować pozycje głównych bloków strony. Będzie usunięta w następnych krokach.
-*/
-
-/*
-Koniec sekcji pomocniczej
-*/
-
-/*
-Ustawiając sekcje nagłówka i stopki w pozycji 'fixed' sprawiamy,
-że niezależnie od pozycji paska przewijania elementy te będą znajdowały się
-w tej samej pozycji względem okna przeglądarki.
-Natomiast pozycję tę ustawiamy za pomocą parametrów 'top', 'bottom', 'right', 'left'.
-*/
 .page-header {
     position: fixed;
     top: 50px;
@@ -98,22 +96,7 @@ Natomiast pozycję tę ustawiamy za pomocą parametrów 'top', 'bottom', 'right'
     left: 50px;
 }
 
-/*
-Lewy margines ustawiony na kontenerze z główną zawartością strony sprawia,
-że nie będzie ona nachodzić na nagłówek i stopkę niezależnie od pozycji paska przewijania.
-Na projekcie graficznym sekcja menu ma szerokość około 170px i jest oddalona od krawędzi ekranu
-o 50px, więc można założyć, że 220px marginesu będzie wartością stosunkowo bezpieczną.
-Z kolei spady (padding) nadane na kontener wyznaczają minimalną odległość, na jaką będzie oddalona
-treść strony od otaczających ją granic kontenera (wartość "0 10%" jest
-skrótem od padding-top: 0, padding-bottom: 0, padding-left: 10%, padding-right: 10%).
-Właściwość "text-align: right" przykleja zawartość do prawej strony
-(oddziałuje na elementy, które są elementami inline'owymi, np. tekst, znaczniki <a>, <span> czy elementy z nadanym stylem "display: inline-block").
-*/
-
-
-
 .page-content {
-    /* margin-left: 220px; */
     text-align: right;
     display: grid;
     grid-template-rows: repeat(6, 100vh);
@@ -157,12 +140,6 @@ Właściwość "text-align: right" przykleja zawartość do prawej strony
     grid-row-end: 7;
 }
 
-/*
-Projekt graficzny zakłada, że każda sekcja strony będzie wypełniać całą wysokość okna przeglądarki
-lub więcej, jeśli zawartość danej sekcji jest wyższa. Dlatego świetnym rozwiązaniem
-będzie użycie jednostki "vh", która oznacza 1% wysokości okna przeglądarki z właściwością "min-height",
-która wymusza wysokość elementu na zadaną wartość lub wyższą.
-*/
 .content-section {
     min-height: 100vh;
 }
@@ -308,7 +285,7 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     letter-spacing: 3.5px;
     font-family: "Open Sans";
     text-align: left;
- }
+}
 
 .concerts button {
     background-color: rgb(204, 200, 255, 0.1);
@@ -325,20 +302,41 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     position: relative;
     top: -61px;
     left: 0px;
- }
+    margin: 1px;
+}
 
 .concerts button:hover {
     background-color:rgb(204, 200, 255, 0.5); 
     color: rgb(204, 200, 255, 1.0);
 }
 
+.concerts button:focus {
+    background-color:rgb(204, 200, 255, 0.2); 
+    color: rgb(204, 200, 255, 0.8);
+    border: 1px solid rgb(204, 200, 255, 0.8);
+    outline: 0;
+    margin: 0;
+}
+
+.concerts button:active {
+    background-color:rgb(204, 200, 255, 0.2); 
+    color: rgb(204, 200, 255, 0.8);
+    border: 0;
+    margin: 1px;
+} 
+
+.concerts button:disabled {
+    background-color:rgb(204, 200, 255, 0.1); 
+    color: rgb(204, 200, 255, 0.4);
+    border: none;
+}
 /* CZWARTA SEKCJA - TELEDYSK */
 
 #video iframe {
     border-top: 3px solid #ef008e;
     width: 92vh;
     height: 65vh;
- }
+}
 
 /* PIĄTA SEKCJA - GALERIA */
 
@@ -376,10 +374,6 @@ która wymusza wysokość elementu na zadaną wartość lub wyższą.
     width: 100%;
 }
 
-#contact .gallery__image {
-
-}
-
 address {
     color: rgb(204, 200, 255, 0.8);
     font-size: 13px;
@@ -391,6 +385,7 @@ address {
 
 .form {
     width: 100%;
+    height: 300px;
 }
 
 .form__field {
@@ -400,6 +395,8 @@ address {
     font-style: normal;
     margin-top: 40px;
     text-align: left;
+    padding-bottom: 10px;
+    padding-top: 10px;
 }
 
 .form__label {
@@ -432,4 +429,29 @@ address {
 .form__field button:hover {
     background-color:rgb(204, 200, 255, 0.5); 
     color: rgb(204, 200, 255, 1.0);
+}
+
+.social-links__link {
+    display: block;
+    font-size: 0;
+    min-width: 20px;
+    min-height: 20px;
+    background-color: #ef008e;
+    -webkit-mask-size: 20px 20px;
+}
+
+.social-links__link[href="http://facebook.com/"]{
+    -webkit-mask-image: url('images/facebook.svg');
+}
+
+.social-links__link[href="http://instagram.com/"]{
+    -webkit-mask-image: url('images/instagram.svg');
+}
+
+.social-links__link[href="http://last.fm/"]{
+    -webkit-mask-image: url('images/lastfm.svg');
+}
+
+.social-links__link[href="http://youtube.com/"]{
+    -webkit-mask-image: url('images/youtube.svg');
 }
