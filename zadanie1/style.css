@@ -113,13 +113,14 @@ Więcej na ten temat: https://webaim.org/techniques/css/invisiblecontent/
     padding: 0;
     margin: 0;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;   
 }
 
 .band-members__image {
     opacity: 0.5;
+    height: 43vh;
 }
 
 .band-members__image:hover {
