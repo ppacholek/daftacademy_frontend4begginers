@@ -475,6 +475,10 @@ SEKCJA "CONTACT"
         flex-grow: 1;
     }
 
+    .hidden-on-mobile {
+        display: none;
+    }
+
     /*
     ######################################
     SEKCJA "HOME"
