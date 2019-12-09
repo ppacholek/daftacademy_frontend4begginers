@@ -8,3 +8,15 @@ hamburgerMenuButton.addEventListener('click', (e) => {
         pageNavigation.classList.add('hidden-on-mobile')
     }
 })
+
+const concertsSection = document.querySelector('.concerts');
+
+concertsSection.addEventListener('click', (e) => {
+    if (event.target.classList.contains('button')) {
+        const haveFunText = document.createElement("span");
+        haveFunText.innerHTML = "Have fun!";
+        
+        const button = event.target;
+        button.parentNode.replaceChild(haveFunText, button)
+    }
+})
