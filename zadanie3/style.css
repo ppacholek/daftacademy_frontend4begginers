@@ -358,6 +358,9 @@ SEKCJA "CONTACT"
     padding-top: 40px;
 }
 
+.hamburger-menu-button {
+    display: none;
+}
 
 /* //////////////////////////////// MOBILE STYLES //////////////////////////////// */
 
@@ -420,6 +423,17 @@ SEKCJA "CONTACT"
 
     .page-navigation__items {
         text-align: center;
+    }
+
+    .hamburger-menu-button {
+        display: block;
+        position: absolute;
+        top: 25px;
+        left: 30px;
+        background: none;
+        border: none;
+        color: #EF008E;
+        font-size: 25px;
     }
 
     /*
