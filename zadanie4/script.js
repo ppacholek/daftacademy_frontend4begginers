@@ -2,7 +2,9 @@
 const hamburgerMenuButton = document.querySelector('.hamburger-menu-button');
 const pageNavigation = document.querySelector('.page-navigation');
 
-hamburgerMenuButton.addEventListener('click', () => {
+hamburgerMenuButton.addEventListener('click', (event) => {
+    const button = document.querySelector('.hamburger-menu-button');
+    button.classList.toggle('isX');
     if (pageNavigation.classList.contains('hidden-on-mobile')) {
         pageNavigation.classList.remove('hidden-on-mobile');
     } else {

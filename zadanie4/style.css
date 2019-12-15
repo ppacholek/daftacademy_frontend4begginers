@@ -439,6 +439,7 @@ SEKCJA "CONTACT"
         border: none;
         color: #EF008E;
         font-size: 25px;
+        outline: none;
     }
 
     .top-line, .middle-line, .bottom-line {
@@ -448,6 +449,26 @@ SEKCJA "CONTACT"
         background: #EF008E;
         border-radius: 5px;
         margin-top: 4px;
+    }
+
+    .middle-line {
+        transition: opacity 0.5s;
+    }
+
+    .top-line, .bottom-line {
+        transition: 1s;
+    }
+
+    .isX .top-line {
+        transform: rotate(45deg) translateY(10px);
+    }
+
+    .isX .bottom-line {
+        transform: rotate(-45deg) translateY(-10px);
+    }
+
+    .isX .middle-line {
+        opacity: 0;
     }
 
     /*
