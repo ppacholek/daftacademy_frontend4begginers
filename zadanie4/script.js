@@ -40,10 +40,6 @@ contactForm.addEventListener('submit', (event) => {
 const images = document.querySelectorAll('.gallery__image');
 images.forEach(image => {
         image.addEventListener('mouseenter', () => {
-            image.classList.reove('change-color');
-        });
-
-        image.addEventListener('mouseleave', () => {
             image.classList.add('change-color');
         });
 });
