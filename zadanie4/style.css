@@ -314,6 +314,7 @@ SEKCJA "PHOTOS"
 .gallery__image {
     width: 100%;
     border-top: 3px solid #EF008E;
+
 }
 
 @supports (display: grid) {
@@ -328,6 +329,32 @@ SEKCJA "PHOTOS"
     .gallery__item {
         width: 100%;
         margin: 0;
+    }
+}
+
+.gallery__image:hover {
+    animation-name: image-animation;
+    animation-duration: 4s;
+}
+
+
+.change-color {
+    animation-name: change-color;
+    animation-duration: 2s;
+}
+
+@keyframes change-color {
+    50% {
+        filter: grayscale(100%) contrast(200%);
+    }
+}
+
+@keyframes image-animation {
+    25%   {
+        transform: scale(0.5)
+    }
+    50%   {
+        transform: scale(1.5)
     }
 }
 

@@ -35,3 +35,15 @@ contactForm.addEventListener('submit', (event) => {
     const fields = Object.fromEntries(formData.entries());
     console.log(fields);
 })
+
+// adding a class to image after mouse leaves it
+const images = document.querySelectorAll('.gallery__image');
+images.forEach(image => {
+        image.addEventListener('mouseenter', () => {
+            image.classList.reove('change-color');
+        });
+
+        image.addEventListener('mouseleave', () => {
+            image.classList.add('change-color');
+        });
+});
