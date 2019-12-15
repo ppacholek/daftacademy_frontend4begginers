@@ -426,6 +426,12 @@ SEKCJA "CONTACT"
     ######################################
     */
 
+    .page-navigation {
+        max-height: 200px;
+        transition: 1s;
+        overflow: hidden;
+    }
+
     .page-navigation__items {
         text-align: center;
     }
@@ -511,7 +517,7 @@ SEKCJA "CONTACT"
     }
 
     .hidden-on-mobile {
-        display: none;
+        max-height: 0;
     }
 
     /*
